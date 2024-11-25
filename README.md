@@ -46,6 +46,11 @@ IntelliSense Hub is a mobile application that uses AI to help users process and 
 - Language swap functionality
 - Auto-speak settings for translations
 
+  ## Video Demo
+  
+https://github.com/user-attachments/assets/368737f7-a6de-4fa3-8340-7cf6ac2a7e1a
+
+
 ## Technical Architecture 🏗️
 
 The project follows a feature-based architecture with clear separation of concerns:
