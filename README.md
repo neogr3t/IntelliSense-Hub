@@ -241,6 +241,11 @@ Key packages used in the project:
 - `path_provider`: For file system access
 - `image_picker`: For camera and gallery image selection
 
+  ## Screenshots
+  ![home](https://github.com/user-attachments/assets/4a8c42f8-94aa-4464-8aa7-e2e710125c74)
+  ![text_rec](https://github.com/user-attachments/assets/5fca487b-8400-45d0-97f9-8dadf7988ac1)
+  ![audio_process](https://github.com/user-attachments/assets/e9911271-3660-49a2-a2cb-105169b7c647)
+
 ## Contributing 🤝
 
 1. Fork the repository
