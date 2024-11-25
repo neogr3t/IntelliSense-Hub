@@ -2,6 +2,8 @@
 
 IntelliSense Hub is a mobile application that uses AI to help users process and understand different types of content. The app currently focuses on PDF analysis, audio processing, image recognition, and speech translation capabilities, providing an intuitive interface for content understanding.
 
+**APK Link for android** [Download apk](https://drive.google.com/file/d/1ySh8cOGKmqNaiQ3jpwxXR_OsIAQAS3Mp/view?usp=sharing)
+
 ## Core Features 🎯
 
 ### 1. PDF Analysis 📄
