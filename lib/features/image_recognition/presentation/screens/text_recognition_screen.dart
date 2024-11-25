@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:mlapp/features/image_recognition/models/recognition_history.dart';
+import 'package:intellisensehub/features/image_recognition/models/recognition_history.dart';
+import 'package:intellisensehub/features/image_recognition/presentation/widgets/text_recognition_result.dart';
+import 'package:intellisensehub/features/image_recognition/services/text_recog_history_service.dart';
 
-import 'package:mlapp/features/image_recognition/presentation/widgets/text_recognition_result.dart';
-import 'package:mlapp/features/image_recognition/services/text_recog_history_service.dart';
 import '../widgets/image_preview.dart';
 import '../widgets/text_actions.dart';
 import '../widgets/bottom_actions.dart';

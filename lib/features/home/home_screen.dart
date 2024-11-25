@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intellisensehub/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:mlapp/providers/theme_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
                     'IntelliSense Hub',
                     style: theme.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
                     ),
                   ),
                 ],

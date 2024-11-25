@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mlapp/features/audio_processing/presentation/screens/audio_processing_screen.dart';
-import 'package:mlapp/features/image_recognition/presentation/screens/text_recognition_screen.dart';
-import 'package:mlapp/features/onboarding/screens/splash_screen.dart';
-import 'package:mlapp/features/speech_translator/presentation/screens/speech_translation_screen.dart';
-import 'package:mlapp/providers/theme_provider.dart';
+import 'package:intellisensehub/features/audio_processing/presentation/screens/audio_processing_screen.dart';
+import 'package:intellisensehub/features/image_recognition/presentation/screens/text_recognition_screen.dart';
+import 'package:intellisensehub/features/onboarding/screens/splash_screen.dart';
+import 'package:intellisensehub/features/speech_translator/presentation/screens/speech_translation_screen.dart';
+import 'package:intellisensehub/providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 import 'config/env_config.dart';
 import 'data/services/preferences_service.dart';

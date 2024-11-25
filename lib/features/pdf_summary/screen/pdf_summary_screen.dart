@@ -2,8 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:intellisensehub/features/pdf_summary/services/pdf_history_service.dart';
 import 'package:intl/intl.dart';
-import 'package:mlapp/features/pdf_summary/services/pdf_history_service.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:uuid/uuid.dart';
@@ -54,45 +54,22 @@ class _PDFSummaryScreenState extends State<PDFSummaryScreen> {
   Future<void> _toggleSpeech() async {
     if (_summary.isEmpty) return;
 
-    try {
-      if (_ttsService.isPlaying) {
-        bool result = await _ttsService.pause();
-        if (result) {
+    setState(() {
+      _isSpeaking = !_isSpeaking;
+    });
+
+    if (_isSpeaking) {
+      await _ttsService.speak(
+        _summary,
+        () {
           setState(() {
             _isSpeaking = false;
           });
-        }
-      } else if (_ttsService.isPaused) {
-        bool result = await _ttsService.resume();
-        if (result) {
-          setState(() {
-            _isSpeaking = true;
-          });
-        }
-      } else {
-        bool result = await _ttsService.speak(
-          _summary,
-          () {
-            if (mounted) {
-              setState(() {
-                _isSpeaking = false;
-              });
-            }
-          },
-          feature: TTSFeature.pdfSummary,
-        );
-
-        if (result) {
-          setState(() {
-            _isSpeaking = true;
-          });
-        }
-      }
-    } catch (e) {
-      print('Toggle speech error: $e');
-      setState(() {
-        _isSpeaking = false;
-      });
+        },
+        feature: TTSFeature.pdfSummary,
+      );
+    } else {
+      await _ttsService.stop();
     }
   }
 
@@ -568,7 +545,11 @@ class _PDFSummaryScreenState extends State<PDFSummaryScreen> {
                             child: Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 16.0),
-                              child: _buildSummarySection(theme),
+                              child: Column(
+                                children: [
+                                  _buildSummarySection(theme),
+                                ],
+                              ),
                             ),
                           ),
                       ],
@@ -630,6 +611,21 @@ class _PDFSummaryScreenState extends State<PDFSummaryScreen> {
                               ),
                             ),
                           ),
+                          if (_summary.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: TextButton.icon(
+                                onPressed: _clearCurrentSummary,
+                                icon: const Icon(
+                                  Icons.delete_outline,
+                                  color: Colors.red,
+                                ),
+                                label: const Text(
+                                  'Clear Current Summary',
+                                  style: TextStyle(color: Colors.red),
+                                ),
+                              ),
+                            ),
                         ],
                       ),
                     ),

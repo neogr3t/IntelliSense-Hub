@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mlapp/main.dart';
+import 'package:intellisensehub/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:math' as math;
 import 'onboarding_screen.dart';

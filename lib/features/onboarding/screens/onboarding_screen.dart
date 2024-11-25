@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mlapp/main.dart';
+import 'package:intellisensehub/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../features/home/home_screen.dart';
 
@@ -16,18 +16,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingPage> _pages = [
     OnboardingPage(
+      title: 'Audio Processing',
+      description:
+          'Process and analyze audio files with advanced AI capabilities',
+      icon: Icons.graphic_eq_rounded,
+      color: Colors.purple,
+    ),
+    OnboardingPage(
       title: 'Text Recognition',
       description:
           'Extract text from images instantly with our powerful OCR technology',
       icon: Icons.document_scanner_rounded,
       color: Colors.blue,
-    ),
-    OnboardingPage(
-      title: 'Speech Translation',
-      description:
-          'Break language barriers with real-time speech translation capabilities',
-      icon: Icons.translate_rounded,
-      color: Colors.green,
     ),
     OnboardingPage(
       title: 'PDF Summarization',
@@ -37,11 +37,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       color: Colors.orange,
     ),
     OnboardingPage(
-      title: 'Audio Processing',
+      title: 'Speech Translation',
       description:
-          'Process and analyze audio files with advanced AI capabilities',
-      icon: Icons.graphic_eq_rounded,
-      color: Colors.purple,
+          'Break language barriers with real-time speech translation capabilities',
+      icon: Icons.translate_rounded,
+      color: Colors.green,
     ),
   ];
 
